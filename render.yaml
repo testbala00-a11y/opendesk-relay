@@ -1,0 +1,12 @@
+# Render Blueprint for the OpenDesk relay.
+# With the relay/ folder pushed to a GitHub repo, Render can read this file and
+# create the service automatically (New + → Blueprint). Free plan, no card.
+services:
+  - type: web
+    name: opendesk-relay
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    autoDeploy: true
